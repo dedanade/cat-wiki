@@ -1,0 +1,220 @@
+.loading-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 252, 249, 0.5);
+  &_body {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.cat-head {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: gray;
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
+  border-bottom-left-radius: 50% 35%;
+  border-bottom-right-radius: 50% 35%;
+  .cat-ear {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    .left-ear,
+    .right-ear {
+      position: absolute;
+      bottom: -30px;
+      background: gray;
+      content: '';
+      height: 45px;
+      width: 35px;
+      z-index: 99;
+      border-top-right-radius: 50% 30%;
+      border-top-left-radius: 50% 30%;
+    }
+    .right-ear {
+      right: 1px;
+      transform: rotate(358deg);
+      border-top-left-radius: 99% 99%;
+      &::after {
+        position: absolute;
+        height: 26px;
+        width: 7px;
+        background: inherit;
+        content: '';
+        left: 2px;
+        z-index: 99;
+        transform: rotate(229deg);
+        top: 2px;
+      }
+    }
+    .left-ear {
+      left: -1px;
+      transform: rotate(358deg);
+      border-top-right-radius: 99% 99%;
+      &::after {
+        position: absolute;
+        height: 26px;
+        width: 7px;
+        background: inherit;
+        content: '';
+        left: 28px;
+        z-index: 99;
+        transform: rotate(315deg);
+        top: 4px;
+      }
+    }
+  }
+  .cat-eye {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    .right-eye,
+    .left-eye {
+      position: relative;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      // box-shadow: inset 1px 20px 1px 4px grey;
+      animation: boxShadow 2s ease 0s infinite;
+      border: gray;
+      &::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        bottom: 0;
+        border-radius: 50%;
+        background: black;
+        transform: translate(18px, -39px);
+        animation: eyeAnimation 2s linear 0s infinite;
+      }
+    }
+    .right-eye {
+      margin-right: 5px;
+    }
+    .left-eye {
+      margin-left: 5px;
+    }
+  }
+  // .cat-nose {
+  //   position: relative;
+  //   margin: 0 auto;
+  //   background: black;
+  //   &::before {
+  //     content: '';
+  //     width: 30px;
+  //     height: 15px;
+  //     border-radius: 50%;
+  //     border-top-left-radius: 5px;
+  //     border-top-right-radius: 5px;
+  //     z-index: 99;
+  //     background: inherit;
+  //     position: absolute;
+  //     top: -20px;
+  //     right: 60px;
+  //   }
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     height: 25px;
+  //     width: 5px;
+  //     background: inherit;
+  //     top: -9px;
+  //     right: 72px;
+  //   }
+  // }
+  // .cat-mouth {
+  //   position: relative;
+  //   margin: 0 auto;
+  //   background: inherit;
+  //   &::before {
+  //     content: '';
+  //     width: 28px;
+  //     height: 10px;
+  //     border: 5px solid black;
+  //     border-radius: 50%;
+  //     border-top-left-radius: 5px;
+  //     border-top-right-radius: 5px;
+  //     z-index: 99;
+  //     background: inherit;
+  //     position: absolute;
+  //     top: 14px;
+  //     right: 56px;
+  //   }
+  // }
+}
+.loading-lines {
+  position: relative;
+  &::before {
+    content: '';
+    border-top: 5px solid black;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: -177px;
+    left: -314px;
+    animation: rotateLines 2s linear 0s infinite;
+  }
+}
+
+@keyframes eyeAnimation {
+  15% {
+    transform: translate(18px, -26px);
+  }
+  30% {
+    transform: translate(18px, -10px);
+  }
+  45% {
+    transform: translate(0px, -10px);
+  }
+  55% {
+    transform: translate(-19px, -10px);
+  }
+  65% {
+    transform: translate(-19px, -22px);
+  }
+  75% {
+    transform: translate(-19px, -36px);
+  }
+  100% {
+    transform: translate(18px, -39px);
+  }
+}
+@keyframes boxShadow {
+  70% {
+    box-shadow: inset 1px 20px 1px 0px grey;
+  }
+
+  80% {
+    box-shadow: inset 1px 0px 1px 0px grey;
+  }
+}
+
+@keyframes rotateLines {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

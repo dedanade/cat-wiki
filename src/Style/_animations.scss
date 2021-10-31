@@ -1,0 +1,30 @@
+@keyframes seeMoreHover {
+  20% {
+    transform: translateX(2);
+  }
+  30% {
+    transform: translateX(3px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes activeRating {
+  100% {
+    background: #544439;
+  }
+}
+
+@for $i from 1 through 10 {
+  .breed-rating :nth-child(#{$i}n) .breed-rating__container {
+    @for $i from 1 through 5 {
+      :nth-child(#{$i}n).active {
+        animation-delay: #{$i * 0.3}s;
+      }
+    }
+  }
+}

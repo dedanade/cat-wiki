@@ -1,0 +1,104 @@
+@import 'config';
+@import 'homepage';
+@import 'breed-info';
+@import 'loading-cat';
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  counter-reset: activeRatingCounter;
+}
+
+a {
+  text-decoration: none;
+}
+// font-family: 'Mystery Quest', cursive;
+
+.container {
+  margin: 0 auto;
+  padding: 0px 96px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-top: 26.33px;
+
+  .logo {
+    align-self: flex-start;
+  }
+}
+
+.top-breed__container {
+  margin-top: 40px;
+  margin-bottom: 106.13px;
+  .top-breed__body {
+    margin-top: 52.63px;
+    .top-breed-info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 55px;
+      &__img {
+        height: 170px;
+        width: 170px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: $Primary-Border-Radius;
+        }
+      }
+      &__text {
+        margin-left: 49.4px;
+        &__body {
+          margin-top: 24px;
+          max-width: 886px;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 27.6px 32.43px 48.06px 108px;
+  background: #000000;
+  border-radius: 42px 42px 0px 0px;
+  &__text {
+    display: flex;
+    align-items: center;
+    color: #d9cfcf;
+    &__copyright {
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 29px;
+    }
+    &__credit {
+      font-weight: normal;
+      font-size: $Text-Primary-Color;
+      margin-left: 13.57px;
+      a {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@import 'animations';
+@import 'media-query';

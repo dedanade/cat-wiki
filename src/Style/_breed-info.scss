@@ -1,0 +1,148 @@
+.breed-info {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  &__image {
+    width: 371.04px;
+    height: 371.04px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &__background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      background: #dec68b;
+      border-radius: 14px;
+      width: 83.64px;
+      height: 305px;
+      margin-top: 38px;
+      margin-bottom: 42px;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $Primary-Border-Radius;
+      margin-left: 13.6px;
+      z-index: 99;
+    }
+  }
+  &__text {
+    margin-top: 1px;
+    margin-left: 115px;
+    &__sub-header {
+      font-weight: 500;
+      font-size: $Text-Primary-Size;
+      line-height: 22px;
+      color: $Text-Primary-Color;
+      margin-top: 25px;
+      word-wrap: break-word;
+      max-width: 601px;
+    }
+    .breed-info__text__ {
+      margin-top: 32.75px;
+      .d-text-inline {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 32px;
+        color: #000000;
+        &__header {
+          font-weight: bold;
+          margin-right: 4px;
+        }
+      }
+    }
+
+    .breed-rating {
+      margin-top: 32px;
+      align-items: center;
+      .breed-rating__container {
+        .breed-rating__card.active {
+          animation: activeRating 2s cubic-bezier(0.23, 1.43, 1, 1.54);
+          animation-fill-mode: forwards;
+        }
+      }
+      &__flex {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+      &__name__text {
+        display: block;
+        align-items: center;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        font-weight: bold;
+        width: 180px;
+      }
+      .breed-rating__container {
+        display: flex;
+        align-items: center;
+        .breed-rating__card {
+          content: '';
+          margin-right: 8.49px;
+          width: 60px;
+          height: 12px;
+          background: #e0e0e0;
+          border-radius: 8px;
+          &.active::before {
+            counter-increment: activeRatingCounter;
+            // content: counter(activeRatingCounter);
+          }
+        }
+      }
+    }
+  }
+
+  &__others {
+    margin-top: 80.22px;
+    margin-bottom: 176.99px;
+    .other_images__header {
+      margin-bottom: 40px;
+    }
+    .other_images__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 53.08px;
+      column-gap: 46px;
+      .other_image {
+        height: 278px;
+        width: 278px;
+        &:hover {
+          transform: scale(1.3);
+          z-index: 99;
+        }
+        img {
+          border-radius: $Primary-Border-Radius;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+// .breed-rating__container {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 34px;
+//   .breed-rating__card {
+//     content: '';
+//     margin-right: 8.49px;
+//     width: 60px;
+//     height: 12px;
+//     background: #e0e0e0;
+//     border-radius: 8px;
+//     &.active {
+//       background: #544439;
+//     }
+//   }
+// }

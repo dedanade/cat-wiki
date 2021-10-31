@@ -1,0 +1,349 @@
+@media (max-width: 1420px) {
+  .discover-card {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .why-card {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media (max-width: 1360px) {
+  .why-card {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .container {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .breed-info__others .other_images__grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    & .other_image {
+      height: 350px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1230px) {
+  .discover-card {
+    .discover-cats {
+      grid-template-columns: repeat(2, 1fr);
+      &__images {
+        width: 100%;
+        height: 400px;
+      }
+      &__name {
+        margin-top: 11px;
+        margin-bottom: 18.32px;
+      }
+    }
+  }
+  .why-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1130px) {
+  .hero-card {
+    height: 400px;
+    &__image {
+      background-image: url('../images/HeroImagemd.png');
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
+    &__header {
+      padding: 50px 0px 0px 50px;
+    }
+  }
+  .why-card {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    &__images {
+      margin-top: 30px;
+    }
+  }
+  .breed-info {
+    flex-direction: column;
+    align-items: flex-start;
+    &__text {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+  .top-breed-info__img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+}
+
+@media (max-width: 970px) {
+  .discover-card .discover-cats__images {
+    height: 300px;
+  }
+  .discover-card__header .discover__lg-header {
+    font-size: 35px;
+    line-height: 40px;
+    max-width: 360px;
+  }
+  .breed-info__others .other_images__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    & .other_image {
+      height: 350px;
+      width: 100%;
+    }
+  }
+  .top-breed-info__img {
+    display: none;
+  }
+  .top-breed-info__text {
+    margin: 0 !important;
+    padding: 0px 30px;
+  }
+}
+@media (max-width: 810px) {
+  .footer {
+    padding-left: 32px;
+  }
+}
+
+@media (max-width: 750px) {
+  .hero-card {
+    height: 300px;
+    &__image {
+      background-image: url('../images/HeroImagesm.png');
+    }
+    &__header {
+      padding: 20px 0px 0px 30px;
+      .hero__sub-heading {
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+      .search-input__card {
+        width: 310.62px;
+        height: 57.67px;
+      }
+    }
+
+    .white-wiki-logo {
+      width: 290px;
+      height: 110px;
+    }
+  }
+  .discover-card {
+    & .discover-cats__images {
+      height: 190px;
+    }
+    & .discover-cats__img-name.first img {
+      margin-left: 4.14px;
+    }
+    &__header .discover__lg-header {
+      font-size: 30px;
+      line-height: 40px;
+      max-width: 250px;
+    }
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34.82px 17px 16px 29px;
+    &__text__credit {
+      font-size: 12px;
+      line-height: 15px;
+      margin-left: 7px;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-card {
+    height: 215px;
+    margin-top: 23.15px;
+    &__image {
+      background-image: url('../images/HeroImagesm.png');
+    }
+    &__header {
+      padding: 21px 0px 0px 29px;
+      .lg-header-logo {
+        display: none;
+      }
+      .sm-header-logo {
+        display: block;
+      }
+      .hero__sub-heading {
+        margin-top: 7.24px;
+        max-width: 135px;
+        font-size: 10px;
+        line-height: 12px;
+        margin-bottom: 18.19px;
+      }
+
+      .search-input__card {
+        display: none;
+        &.sm {
+          display: flex;
+          width: 91px;
+          height: 30px;
+          input {
+            font-size: 12px;
+          }
+          .search__svg {
+            margin-right: 10px;
+            width: 10.66px;
+            height: 10.66px;
+          }
+        }
+      }
+    }
+    .white-wiki-logo {
+      width: 184px;
+      height: 53px;
+    }
+  }
+  .discover-card {
+    padding: 18px 28px 53px 28px;
+    &__sm-header {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    &__header {
+      margin-top: 17px;
+      .discover__lg-header {
+        font-size: 18px;
+        line-height: 22px;
+        max-width: 185px;
+      }
+      .more__options {
+        display: none;
+      }
+    }
+    .discover-cats {
+      margin-top: 26px;
+      column-gap: 13px;
+      &__images {
+        height: 137px;
+      }
+      &__name {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+  }
+  .why-card {
+    padding-top: 63px;
+    padding-bottom: 22px;
+    .why-card__text {
+      margin: 0;
+      &-header {
+        font-size: 40px;
+        line-height: 49px;
+        width: 100%;
+      }
+      &-sub-header {
+        width: 100%;
+        margin-top: 42.84px;
+      }
+    }
+    .more__options {
+      margin-top: 26.95px;
+      .more__options__text {
+        font-size: 12px;
+        line-height: 15px;
+      }
+      .right-arrow__svg {
+        height: 6.32;
+        width: 16.44px;
+      }
+    }
+    &__images {
+      margin-top: 63.72px;
+      max-width: 100%;
+      &__first-set {
+        max-width: 172px;
+        height: 307px;
+        & :nth-child(1) {
+          width: 100%;
+          height: 105px;
+          margin-bottom: 17.96px;
+        }
+        & :nth-child(2) {
+          max-width: 122px;
+          height: 184px;
+        }
+      }
+      &__second-set {
+        max-width: 149px;
+        margin-left: 16.99px;
+        height: 242px;
+      }
+    }
+  }
+  .breed-info__others .other_images__grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    & .other_image {
+      height: 200px;
+      width: 100%;
+    }
+  }
+  .breed-info__text {
+    & .breed-rating__flex {
+      flex-direction: column;
+    }
+    & .breed-rating__name__text {
+      font-size: 12px;
+      width: fit-content;
+      margin-bottom: 10px;
+    }
+    .breed-info__text__ .d-text-inline {
+      font-size: 12px;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 403px) {
+  .hero-card {
+    height: 170px;
+  }
+  .wiki-cat-text__header {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .breed-info__text__sub-header {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .breed-info__text .breed-rating .breed-rating__container .breed-rating__card {
+    width: 40px;
+  }
+  .breed-info__image {
+    width: 100%;
+    height: 300px;
+    img {
+      margin-left: 7px;
+    }
+    &__background::before {
+      height: 80%;
+    }
+  }
+  .breed-info__others .other_images__grid .other_image {
+    height: 150px;
+  }
+}
