@@ -11,6 +11,8 @@ function ViewBreed(props) {
   const [breed, setBreed] = useState(null);
   const [image, setImage] = useState(null);
   const [otherImages, setOtherImages] = useState(null);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   const { breedName } = props.match.params;
 
   const history = useHistory();
@@ -71,8 +73,12 @@ function ViewBreed(props) {
       <Header />
       <div className='breed-info'>
         <div className='breed-info__image'>
-          <div className='breed-info__image__background'></div>
-          <img src={image} alt={`${breed.name} Cat`} />
+          {imgLoaded && <div className='breed-info__image__background'></div>}
+          <img
+            src={image}
+            alt={`${breed.name} Cat`}
+            onload={setImgLoaded(true)}
+          />
         </div>
         <div className='breed-info__text'>
           <p className='wiki-cat-text__header'>{breed.name}</p>

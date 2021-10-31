@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ARROW_RIGHT } from '../../images/arrow_right.svg';
 
 function DiscoverCats({ topBreeds }) {
+  const [imgLoaded, setImgLoaded] = useState(false);
   return (
     <div className='discover-card'>
       <p className='discover-card__sm-header'>Most Searched Breeds</p>
@@ -27,8 +28,14 @@ function DiscoverCats({ topBreeds }) {
               }
             >
               <div className='discover-cats__images'>
-                {i === 0 && <div className='first-image__background'></div>}
-                <img src={breed.image.url} alt={`${breed.name} Cat`} />
+                {i === 0 && imgLoaded && (
+                  <div className='first-image__background'></div>
+                )}
+                <img
+                  src={breed.image.url}
+                  alt={`${breed.name} Cat`}
+                  onLoad={setImgLoaded(true)}
+                />
               </div>
               <Link to={`breed/${breed.id}`} className='discover-cats__name'>
                 {breed.name}
