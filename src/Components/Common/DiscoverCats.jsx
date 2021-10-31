@@ -34,7 +34,7 @@ function DiscoverCats({ topBreeds }) {
                 <img
                   src={breed.image.url}
                   alt={`${breed.name} Cat`}
-                  onLoad={setImgLoaded(true)}
+                  onLoad={() => setImgLoaded(true)}
                 />
               </div>
               <Link to={`breed/${breed.id}`} className='discover-cats__name'>

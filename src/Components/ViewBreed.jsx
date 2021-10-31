@@ -77,7 +77,7 @@ function ViewBreed(props) {
           <img
             src={image}
             alt={`${breed.name} Cat`}
-            onload={setImgLoaded(true)}
+            onload={() => setImgLoaded(true)}
           />
         </div>
         <div className='breed-info__text'>
