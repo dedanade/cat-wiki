@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
 import { GetBreed, GetBreedImages } from '../Services/ApiRequest';
 import Header from './Common/Header';
 import Footer from './Common/Footer';
