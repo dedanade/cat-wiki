@@ -12,43 +12,38 @@ function ViewBreed(props) {
   const [image, setImage] = useState(null);
   const [otherImages, setOtherImages] = useState(null);
   const [imgLoaded, setImgLoaded] = useState(false);
-
   const { breedName } = props.match.params;
-
-  const history = useHistory();
+  // const stateBreed = props.history.location.state?.breed;
 
   useEffect(() => {
     (async () => {
       try {
-        const breed = await GetBreed(breedName);
-        if (!breed.length) {
-          alert(`Unable to get Info for this breed. Try another breed`);
-          history.goBack();
-        } else {
-          const b = breed[0];
-          const ratings = [
-            { name: 'Adaptability', rate: b.adaptability },
-            { name: 'Affection Level', rate: b.affection_level },
-            { name: 'Child Friendly', rate: b.child_friendly },
-            { name: 'Dog Friendly', rate: b.dog_friendly },
-            { name: 'Energy Level', rate: b.energy_level },
-            { name: 'Grooming', rate: b.grooming },
-            { name: 'Health Issues', rate: b.health_issues },
-            { name: 'Intelligence', rate: b.intelligence },
-            { name: 'Social Needs', rate: b.social_needs },
-            { name: 'Stranger Friendly', rate: b.stranger_friendly },
-          ];
-          const imgs = await GetBreedImages(breedName, 9);
-          const images = imgs.map((b) => {
-            return b.url;
-          });
-          setImage(images[0]);
-          images.shift();
-          setOtherImages(images);
-          setRatings(ratings);
-          setBreed(breed[0]);
-        }
-      } catch (error) {}
+        const res = await GetBreed(breedName);
+        const breed = res[0].breeds[0];
+        const ratings = [
+          { name: 'Adaptability', rate: breed.adaptability },
+          { name: 'Affection Level', rate: breed.affection_level },
+          { name: 'Child Friendly', rate: breed.child_friendly },
+          { name: 'Dog Friendly', rate: breed.dog_friendly },
+          { name: 'Energy Level', rate: breed.energy_level },
+          { name: 'Grooming', rate: breed.grooming },
+          { name: 'Health Issues', rate: breed.health_issues },
+          { name: 'Intelligence', rate: breed.intelligence },
+          { name: 'Social Needs', rate: breed.social_needs },
+          { name: 'Stranger Friendly', rate: breed.stranger_friendly },
+        ];
+        const img = await GetBreedImages(breedName, 9);
+        const images = img.map((b) => {
+          return b.url;
+        });
+        setImage(images[0]);
+        images.shift();
+        setOtherImages(images);
+        setRatings(ratings);
+        setBreed(breed);
+      } catch (error) {
+        alert('Unable to get Info for this breed. Refresh and try again');
+      }
     })();
   }, []);
 
@@ -67,7 +62,6 @@ function ViewBreed(props) {
     }
     return spanRatings;
   };
-
   return (
     <>
       <Header />
@@ -77,7 +71,7 @@ function ViewBreed(props) {
           <img
             src={image}
             alt={`${breed.name} Cat`}
-            onload={() => setImgLoaded(true)}
+            onLoad={() => setImgLoaded(true)}
           />
         </div>
         <div className='breed-info__text'>
@@ -99,31 +93,20 @@ function ViewBreed(props) {
             </div>
             <div className='d-text-inline'>
               <p className='d-text-inline__header'>Life Span: </p>
-              <p className='d-text-inline__details'>{breed.life_span}</p>
+              <p className='d-text-inline__details'>{`${breed.life_span} years`}</p>
             </div>
           </div>
           <div className='breed-rating'>
             {ratings.map((rating, i) => {
               return (
-                <div className='breed-rating__flex'>
-                  <p key={i} className='breed-rating__name__text'>
-                    {rating.name}:
-                  </p>
+                <div key={i} className='breed-rating__flex'>
+                  <p className='breed-rating__name__text'>{rating.name}:</p>
                   <div className='breed-rating__container'>
                     <RatingFunction rate={rating.rate} />
                   </div>
                 </div>
               );
             })}
-            {/* <div className='breed-rating__rate'>
-              {ratings.map((rating, i) => {
-                return (
-                  <div key={i} className='breed-rating__container'>
-                    <RatingFunction rate={rating.rate} />
-                  </div>
-                );
-              })}
-            </div> */}
           </div>
         </div>
       </div>
@@ -134,8 +117,8 @@ function ViewBreed(props) {
         <div className='other_images__grid'>
           {otherImages.map((img, i) => {
             return (
-              <div className='other_image'>
-                <img key={i} src={img} alt={breed.name} />
+              <div key={i} className='other_image'>
+                <img src={img} alt={breed.name} />
               </div>
             );
           })}
