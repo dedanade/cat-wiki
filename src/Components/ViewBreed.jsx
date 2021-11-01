@@ -95,14 +95,17 @@ function ViewBreed(props) {
               <p className='d-text-inline__details'>{`${breed.life_span} years`}</p>
             </div>
           </div>
+
           <div className='breed-rating'>
             {ratings.map((rating, i) => {
               return (
                 <div key={i} className='breed-rating__flex'>
                   <p className='breed-rating__name__text'>{rating.name}:</p>
-                  <div className='breed-rating__container'>
-                    <RatingFunction rate={rating.rate} />
-                  </div>
+                  {imgLoaded && (
+                    <div className='breed-rating__container'>
+                      <RatingFunction rate={rating.rate} />
+                    </div>
+                  )}
                 </div>
               );
             })}
